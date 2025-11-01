@@ -3,9 +3,9 @@
         xsi:noNamespaceSchemaLocation="Hotels.xsd">
 
   <Hotel id="h1" Rating="4.2">
-    <Name>Westin</Name>
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
+    <Name>Westin</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>11</Number>
       <Street>E 7th St</Street>
@@ -16,8 +16,8 @@
   </Hotel>
 
   <Hotel id="h2" Rating="4.5">
-    <Name>Hyatt Place Phoenix</Name>
     <Phone>602-555-1200</Phone>
+    <Name>Hyatt Place Phoenix</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>150</Number>
       <Street>E Adams St</Street>
@@ -28,9 +28,9 @@
   </Hotel>
 
   <Hotel id="h3">
-    <Name>Courtyard Scottsdale</Name>
     <Phone>480-555-2233</Phone>
     <Phone>877-555-9988</Phone>
+    <Name>Courtyard Scottsdale</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>3311</Number>
       <Street>N Scottsdale Rd</Street>
@@ -41,8 +41,8 @@
   </Hotel>
 
   <Hotel id="h4" Rating="4.0">
-    <Name>Tempe Mission Palms</Name>
     <Phone>480-555-4455</Phone>
+    <Name>Tempe Mission Palms</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>60</Number>
       <Street>E 5th St</Street>
@@ -53,8 +53,8 @@
   </Hotel>
 
   <Hotel id="h5">
-    <Name>AC Hotel Phoenix Tempe</Name>
     <Phone>480-555-7788</Phone>
+    <Name>AC Hotel Phoenix Tempe</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>100</Number>
       <Street>E Rio Salado Pkwy</Street>
@@ -65,8 +65,8 @@
   </Hotel>
 
   <Hotel id="h6" Rating="4.1">
-    <Name>Hilton Garden Inn Phoenix</Name>
     <Phone>602-555-3322</Phone>
+    <Name>Hilton Garden Inn Phoenix</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>3838</Number>
       <Street>E Van Buren St</Street>
@@ -77,8 +77,8 @@
   </Hotel>
 
   <Hotel id="h7">
-    <Name>Residence Inn Tempe</Name>
     <Phone>480-555-9900</Phone>
+    <Name>Residence Inn Tempe</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>510</Number>
       <Street>S Forest Ave</Street>
@@ -89,8 +89,8 @@
   </Hotel>
 
   <Hotel id="h8" Rating="4.6">
-    <Name>Kimpton Hotel Palomar</Name>
     <Phone>602-555-7171</Phone>
+    <Name>Kimpton Hotel Palomar</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>2</Number>
       <Street>E Jefferson St</Street>
@@ -101,8 +101,8 @@
   </Hotel>
 
   <Hotel id="h9">
-    <Name>SpringHill Suites Phoenix</Name>
     <Phone>602-555-6060</Phone>
+    <Name>SpringHill Suites Phoenix</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>802</Number>
       <Street>E Van Buren St</Street>
@@ -113,8 +113,8 @@
   </Hotel>
 
   <Hotel id="h10" Rating="3.9">
-    <Name>Holiday Inn Express Tempe</Name>
     <Phone>480-555-5151</Phone>
+    <Name>Holiday Inn Express Tempe</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>1520</Number>
       <Street>W Baseline Rd</Street>
@@ -125,8 +125,8 @@
   </Hotel>
 
   <Hotel id="h11">
-    <Name>Hampton Inn &amp; Suites Tempe</Name>
     <Phone>480-555-4141</Phone>
+    <Name>Hampton Inn &amp; Suites Tempe</Name>
     <Address NearestAirport="Sky Harbor">
       <Number>1415</Number>
       <Street>N Scottsdale Rd</Street>
