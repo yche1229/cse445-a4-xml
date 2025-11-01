@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Wrong root element name, should be "Hotels" -->
 <Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="Hotels.xsd">
 
-  <!-- Miss required attribute "id" -->
+  <!-- ② 缺少必填屬性 id -->
   <Hotel Rating="4.2">
+    <!-- ⑤ 兩個 Name -->
     <Name>Westin</Name>
-    <Phone>480-968-8885</Phone>
-    <Phone>800-937-8461</Phone>
+    <Name>Duplicate Name</Name>
+    <!-- ③ 故意缺少 Phone -->
+    <!-- <Phone>480-968-8885</Phone> -->
     <Address NearestAirport="Sky Harbor">
       <Number>11</Number>
       <Street>E 7th St</Street>
@@ -17,43 +18,16 @@
     </Address>
   </Hotel>
 
-  <!-- Miss all Phone element -->
-  <Hotel id="h3">
-    <Name>Courtyard Scottsdale</Name>
+  <Hotel id="h2" Rating="4.5">
+    <Name>Hyatt Place Phoenix</Name>
+    <Phone>602-555-1200</Phone>
+    <!-- ④ Address 少結束標籤（缺 </Address>） -->
     <Address>
-      <Number>3311</Number>
-      <Street>N Scottsdale Rd</Street>
-      <City>Scottsdale</City>
+      <Number>150</Number>
+      <Street>E Adams St</Street>
+      <City>Phoenix</City>
       <State>AZ</State>
-      <Zip>85251</Zip>
-    </Address>
-  </Hotel>
-
-  <!-- Miss closing </Address> tag -->
-  <Hotel id="h4">
-    <Name>Tempe Mission Palms</Name>
-    <Phone>480-555-4455</Phone>
-    <Address>
-      <Number>60</Number>
-      <Street>E 5th St</Street>
-      <City>Tempe</City>
-      <State>AZ</State>
-      <Zip>85281</Zip>
-    <!-- Miss </Address> -->
-  </Hotel>
-
-  <!-- Duplicate <Name> element inside the same hotel -->
-  <Hotel id="h5">
-    <Name>AC Hotel Phoenix Tempe</Name>
-    <Name>Duplicated Name</Name>
-    <Phone>480-555-7788</Phone>
-    <Address>
-      <Number>100</Number>
-      <Street>E Rio Salado Pkwy</Street>
-      <City>Tempe</City>
-      <State>AZ</State>
-      <Zip>85281</Zip>
-    </Address>
+      <Zip>85004</Zip>
   </Hotel>
 
 </Hotel>
