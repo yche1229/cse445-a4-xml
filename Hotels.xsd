@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
 
-  <!-- Root -->
+  <!-- Address type: 固定欄位順序，NearestAirport 為可選屬性 -->
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="Number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Street" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="City"   type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="State"  type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Zip"    type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="NearestAirport" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- Hotel type: Name、Phone*、Address(1)，屬性 id 必填，Rating 可選 -->
+  <xs:complexType name="HotelType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+    <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
+  </xs:complexType>
+
+  <!-- 根元素：Hotels 由多個 Hotel 組成（至少 1 個；作業要求你放 >= 10 筆） -->
   <xs:element name="Hotels">
     <xs:complexType>
       <xs:sequence>
@@ -9,44 +34,5 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
-  <!-- Phone format: 000-000-0000 -->
-  <xs:simpleType name="PhoneType">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <!-- Address -->
-  <xs:complexType name="AddressType">
-    <xs:sequence>
-      <xs:element name="Number" type="xs:positiveInteger"/>
-      <xs:element name="Street" type="xs:string"/>
-      <xs:element name="City" type="xs:string"/>
-      <xs:element name="State" type="xs:string"/>
-      <xs:element name="Zip" type="xs:string"/>
-    </xs:sequence>
-    <xs:attribute name="NearestAirport" type="xs:string" use="optional"/>
-  </xs:complexType>
-
-  <!-- Hotel: **Phone(s) → Name → Address**（順序固定） -->
-  <xs:complexType name="HotelType">
-    <xs:sequence>
-      <xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="2"/>
-      <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"/>
-    </xs:sequence>
-
-    <xs:attribute name="id" type="xs:ID" use="required"/>
-    <xs:attribute name="Rating" use="optional">
-      <xs:simpleType>
-        <xs:restriction base="xs:decimal">
-          <xs:minInclusive value="0.0"/>
-          <xs:maxInclusive value="5.0"/>
-          <xs:fractionDigits value="1"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
-  </xs:complexType>
 
 </xs:schema>
