@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           elementFormDefault="unqualified"
-           attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <!-- 根：一到多個 Hotel，明寫 minOccurs/maxOccurs -->
+  <!-- Root -->
   <xs:element name="Hotels">
     <xs:complexType>
       <xs:sequence>
@@ -12,55 +10,43 @@
     </xs:complexType>
   </xs:element>
 
-  <!-- Hotel：順序固定 Name → Phone* → Address -->
+  <!-- Phone format: 000-000-0000 -->
+  <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Address -->
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="Number" type="xs:positiveInteger"/>
+      <xs:element name="Street" type="xs:string"/>
+      <xs:element name="City" type="xs:string"/>
+      <xs:element name="State" type="xs:string"/>
+      <xs:element name="Zip" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="NearestAirport" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- Hotel: **Phone(s) → Name → Address**（順序固定） -->
   <xs:complexType name="HotelType">
     <xs:sequence>
+      <xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="2"/>
       <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="unbounded"/>
       <xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
+
     <xs:attribute name="id" type="xs:ID" use="required"/>
-    <!-- Rating 明確限制 0~5，允許一位小數 -->
     <xs:attribute name="Rating" use="optional">
       <xs:simpleType>
         <xs:restriction base="xs:decimal">
           <xs:minInclusive value="0.0"/>
           <xs:maxInclusive value="5.0"/>
-          <xs:totalDigits value="2"/>
           <xs:fractionDigits value="1"/>
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
   </xs:complexType>
-
-  <!-- Phone：單一字串，交由內容測試驗證格式；這裡僅顯式 required/occurs -->
-  <xs:simpleType name="PhoneType">
-    <xs:restriction base="xs:string"/>
-  </xs:simpleType>
-
-  <!-- Address：Number/Street/City/State/Zip，NearestAirport 屬性 required -->
-  <xs:complexType name="AddressType">
-    <xs:sequence>
-      <xs:element name="Number" type="xs:integer" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Street" type="xs:string"  minOccurs="1" maxOccurs="1"/>
-      <xs:element name="City"   type="xs:string"  minOccurs="1" maxOccurs="1"/>
-      <xs:element name="State"  type="StateCode"  minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Zip"    type="ZipCode"    minOccurs="1" maxOccurs="1"/>
-    </xs:sequence>
-    <xs:attribute name="NearestAirport" type="xs:string" use="required"/>
-  </xs:complexType>
-
-  <!-- 州、郵遞區號明確 pattern -->
-  <xs:simpleType name="StateCode">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[A-Z]{2}"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="ZipCode">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="\d{5}"/>
-    </xs:restriction>
-  </xs:simpleType>
 
 </xs:schema>
