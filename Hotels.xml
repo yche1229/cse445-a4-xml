@@ -30,7 +30,7 @@
     <Name>Courtyard Scottsdale</Name>
     <Phone>480-555-2233</Phone>
     <Phone>877-555-9988</Phone>
-    <Address>
+    <Address NearestAirport="Sky Harbor">
       <Number>3311</Number>
       <Street>N Scottsdale Rd</Street>
       <City>Scottsdale</City>
@@ -54,7 +54,7 @@
   <Hotel id="h5">
     <Name>AC Hotel Phoenix Tempe</Name>
     <Phone>480-555-7788</Phone>
-    <Address>
+    <Address NearestAirport="Sky Harbor">
       <Number>100</Number>
       <Street>E Rio Salado Pkwy</Street>
       <City>Tempe</City>
@@ -78,7 +78,7 @@
   <Hotel id="h7">
     <Name>Residence Inn Tempe</Name>
     <Phone>480-555-9900</Phone>
-    <Address>
+    <Address NearestAirport="Sky Harbor">
       <Number>510</Number>
       <Street>S Forest Ave</Street>
       <City>Tempe</City>
@@ -90,7 +90,7 @@
   <Hotel id="h8" Rating="4.6">
     <Name>Kimpton Hotel Palomar</Name>
     <Phone>602-555-7171</Phone>
-    <Address>
+    <Address NearestAirport="Sky Harbor">
       <Number>2</Number>
       <Street>E Jefferson St</Street>
       <City>Phoenix</City>
@@ -114,7 +114,7 @@
   <Hotel id="h10" Rating="3.9">
     <Name>Holiday Inn Express Tempe</Name>
     <Phone>480-555-5151</Phone>
-    <Address>
+    <Address NearestAirport="Sky Harbor">
       <Number>1520</Number>
       <Street>W Baseline Rd</Street>
       <City>Tempe</City>
@@ -126,7 +126,7 @@
   <Hotel id="h11">
     <Name>Hampton Inn &amp; Suites Tempe</Name>
     <Phone>480-555-4141</Phone>
-    <Address>
+    <Address NearestAirport="Sky Harbor">
       <Number>1415</Number>
       <Street>N Scottsdale Rd</Street>
       <City>Tempe</City>
