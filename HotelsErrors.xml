@@ -2,13 +2,12 @@
 <Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="Hotels.xsd">
 
-  <!-- ② 缺少必填屬性 id -->
+  <!-- (5) duplicate Name -->
   <Hotel Rating="4.2">
-    <!-- ⑤ 兩個 Name -->
     <Name>Westin</Name>
-    <Name>Duplicate Name</Name>
-    <!-- ③ 故意缺少 Phone -->
-    <!-- <Phone>480-968-8885</Phone> -->
+    <Name>Duplicate Name Error</Name>
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
     <Address NearestAirport="Sky Harbor">
       <Number>11</Number>
       <Street>E 7th St</Street>
@@ -18,16 +17,16 @@
     </Address>
   </Hotel>
 
-  <Hotel id="h2" Rating="4.5">
-    <Name>Hyatt Place Phoenix</Name>
-    <Phone>602-555-1200</Phone>
-    <!-- ④ Address 少結束標籤（缺 </Address>） -->
+  <!-- (2) missing required attribute NearestAirport, (3) missing Phone, (4) Address no closing tag -->
+  <Hotel Rating="4.1">
+    <Name>Hilton Phoenix Airport</Name>
     <Address>
-      <Number>150</Number>
-      <Street>E Adams St</Street>
+      <Number>2435</Number>
+      <Street>S 47th St</Street>
       <City>Phoenix</City>
       <State>AZ</State>
-      <Zip>85004</Zip>
+      <Zip>85034</Zip>
+    <!-- no </Address> here on purpose -->
   </Hotel>
 
 </Hotel>
