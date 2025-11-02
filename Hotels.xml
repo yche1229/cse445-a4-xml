@@ -27,5 +27,113 @@
     </Address>
   </Hotel>
 
-  <!-- h3 ~ h11 也都改成 Phone → Name → Address 的順序 -->
+  <Hotel id="h3">
+    <Phone>480-555-2233</Phone>
+    <Phone>877-555-9988</Phone>
+    <Name>Courtyard Scottsdale</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>3311</Number>
+      <Street>N Scottsdale Rd</Street>
+      <City>Scottsdale</City>
+      <State>AZ</State>
+      <Zip>85251</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h4" Rating="4.0">
+    <Phone>480-555-4455</Phone>
+    <Name>Tempe Mission Palms</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>60</Number>
+      <Street>E 5th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h5">
+    <Phone>480-555-7788</Phone>
+    <Name>AC Hotel Phoenix Tempe</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>100</Number>
+      <Street>E Rio Salado Pkwy</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h6" Rating="4.1">
+    <Phone>602-555-3322</Phone>
+    <Name>Hilton Garden Inn Phoenix</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>3838</Number>
+      <Street>E Van Buren St</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85008</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h7">
+    <Phone>480-555-9900</Phone>
+    <Name>Residence Inn Tempe</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>510</Number>
+      <Street>S Forest Ave</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h8" Rating="4.6">
+    <Phone>602-555-7171</Phone>
+    <Name>Kimpton Hotel Palomar</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>2</Number>
+      <Street>E Jefferson St</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85004</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h9">
+    <Phone>602-555-6060</Phone>
+    <Name>SpringHill Suites Phoenix</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>802</Number>
+      <Street>E Van Buren St</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85006</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h10" Rating="3.9">
+    <Phone>480-555-5151</Phone>
+    <Name>Holiday Inn Express Tempe</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>1520</Number>
+      <Street>W Baseline Rd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85283</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel id="h11">
+    <Phone>480-555-4141</Phone>
+    <Name>Hampton Inn &amp; Suites Tempe</Name>
+    <Address NearestAirport="Sky Harbor">
+      <Number>1415</Number>
+      <Street>N Scottsdale Rd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
 </Hotels>
