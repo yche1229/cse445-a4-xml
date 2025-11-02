@@ -8,7 +8,7 @@
       <xs:sequence>
         <xs:element name="Hotel" maxOccurs="unbounded" minOccurs="1">
           <xs:complexType>
-            <!-- 注意：順序固定，先 Phone(1~2)、再 Name(1)、最後 Address(1) -->
+
             <xs:sequence>
               <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="2"/>
               <xs:element name="Name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
