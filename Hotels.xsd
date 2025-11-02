@@ -3,34 +3,33 @@
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
 
-  <!-- Address type: 固定欄位順序，NearestAirport 為可選屬性 -->
-  <xs:complexType name="AddressType">
-    <xs:sequence>
-      <xs:element name="Number" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Street" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="City"   type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="State"  type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Zip"    type="xs:string" minOccurs="1" maxOccurs="1"/>
-    </xs:sequence>
-    <xs:attribute name="NearestAirport" type="xs:string" use="optional"/>
-  </xs:complexType>
-
-  <!-- Hotel type: Name、Phone*、Address(1)，屬性 id 必填，Rating 可選 -->
-  <xs:complexType name="HotelType">
-    <xs:sequence>
-      <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
-      <xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"/>
-    </xs:sequence>
-    <xs:attribute name="id" type="xs:ID" use="required"/>
-    <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
-  </xs:complexType>
-
-  <!-- 根元素：Hotels 由多個 Hotel 組成（至少 1 個；作業要求你放 >= 10 筆） -->
   <xs:element name="Hotels">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Hotel" type="HotelType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Hotel" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <!-- 注意：順序固定，先 Phone(1~2)、再 Name(1)、最後 Address(1) -->
+            <xs:sequence>
+              <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="2"/>
+              <xs:element name="Name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="Address" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Number" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Street" type="xs:string"          minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="City"   type="xs:string"          minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="State"  type="xs:string"          minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Zip"    type="xs:string"          minOccurs="1" maxOccurs="1"/>
+                  </xs:sequence>
+                  <xs:attribute name="NearestAirport" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+
+            <xs:attribute name="id"     type="xs:ID"      use="required"/>
+            <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
